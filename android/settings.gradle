@@ -1,0 +1,3 @@
+include ':app'
+include ':AliyunVideoCommon'
+include ':AlivcInteractiveClass_player:AlivcInteractiveClass_player_demo'

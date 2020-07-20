@@ -1,0 +1,18 @@
+#use_frameworks!
+install! 'cocoapods', :deterministic_uuids => false
+
+
+#ali_source 'alibaba-specs' #集团内部仓库
+
+#ali_source 'alibaba-specs-mirror' #官方镜像仓库
+
+platform :ios, '9.0'
+
+target 'LectureHall' do
+ 
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'AliRTCSdk', :git=>'https://github.com/aliyunvideo/AliRtcSDK_iOS.git',:tag=>'1.17.9'
+pod 'AliPlayerSDK_iOS', :git=>'https://github.com/aliyunvideo/AliPlayerSDK.git',:tag=>'4.7.4'
+
+end

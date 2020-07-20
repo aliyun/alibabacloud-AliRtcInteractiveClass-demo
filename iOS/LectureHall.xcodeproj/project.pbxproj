@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1324374624975D4400F592D4 /* RTCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1324374524975D4400F592D4 /* RTCManager.m */; };
+		33A6657A4FBF671AF4441A3E /* libPods-LectureHall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D14DB62195694CE15B8B58 /* libPods-LectureHall.a */; };
+		F30D20F3247B9F0C00BC0A57 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D20F2247B9F0C00BC0A57 /* CommonUtils.m */; };
+		F30D20F7247BC61500BC0A57 /* RTCRemoterUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F30D20F6247BC61500BC0A57 /* RTCRemoterUserCell.m */; };
+		F33DF7E3247774FC00264DA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF7E2247774FC00264DA6 /* AppDelegate.m */; };
+		F33DF7EC247774FC00264DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33DF7EA247774FC00264DA6 /* Main.storyboard */; };
+		F33DF7EE247774FD00264DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33DF7ED247774FD00264DA6 /* Assets.xcassets */; };
+		F33DF7F1247774FD00264DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33DF7EF247774FD00264DA6 /* LaunchScreen.storyboard */; };
+		F33DF7F4247774FD00264DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF7F3247774FD00264DA6 /* main.m */; };
+		F33DF7FE247774FD00264DA6 /* LectureHallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF7FD247774FD00264DA6 /* LectureHallTests.m */; };
+		F33DF809247774FD00264DA6 /* LectureHallUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF808247774FD00264DA6 /* LectureHallUITests.m */; };
+		F33DF8192477AF9700264DA6 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF8182477AF9700264DA6 /* LoginController.m */; };
+		F33DF81D2477BC4100264DA6 /* RTCRemoteUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF81C2477BC4100264DA6 /* RTCRemoteUserManager.m */; };
+		F33DF8212477C0C800264DA6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF8202477C0C800264DA6 /* MainController.m */; };
+		F33DF8242477C35200264DA6 /* RTCRemoteUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF8232477C35200264DA6 /* RTCRemoteUserModel.m */; };
+		F33DF8282477D4F300264DA6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DF8272477D4F300264DA6 /* NetworkManager.m */; };
+		F3F4AE49247E1C860015AB42 /* AlertMsgController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F4AE48247E1C860015AB42 /* AlertMsgController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F33DF7FA247774FD00264DA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33DF7D6247774FC00264DA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F33DF7DD247774FC00264DA6;
+			remoteInfo = LectureHall;
+		};
+		F33DF805247774FD00264DA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33DF7D6247774FC00264DA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F33DF7DD247774FC00264DA6;
+			remoteInfo = LectureHall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1324374424975D4400F592D4 /* RTCManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCManager.h; sourceTree = "<group>"; };
+		1324374524975D4400F592D4 /* RTCManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCManager.m; sourceTree = "<group>"; };
+		6FB24C1A924BCC5F220ED726 /* Pods-LectureHall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LectureHall.release.xcconfig"; path = "Pods/Target Support Files/Pods-LectureHall/Pods-LectureHall.release.xcconfig"; sourceTree = "<group>"; };
+		C3D14DB62195694CE15B8B58 /* libPods-LectureHall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LectureHall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9E0DB1610B5C933B40CBEF /* Pods-LectureHall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LectureHall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LectureHall/Pods-LectureHall.debug.xcconfig"; sourceTree = "<group>"; };
+		F30D20F1247B9F0C00BC0A57 /* CommonUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		F30D20F2247B9F0C00BC0A57 /* CommonUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		F30D20F5247BC61500BC0A57 /* RTCRemoterUserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCRemoterUserCell.h; sourceTree = "<group>"; };
+		F30D20F6247BC61500BC0A57 /* RTCRemoterUserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCRemoterUserCell.m; sourceTree = "<group>"; };
+		F33DF7DE247774FC00264DA6 /* LectureHall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LectureHall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33DF7E1247774FC00264DA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F33DF7E2247774FC00264DA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F33DF7EB247774FC00264DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F33DF7ED247774FD00264DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F33DF7F0247774FD00264DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F33DF7F2247774FD00264DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F33DF7F3247774FD00264DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F33DF7F9247774FD00264DA6 /* LectureHallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LectureHallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33DF7FD247774FD00264DA6 /* LectureHallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LectureHallTests.m; sourceTree = "<group>"; };
+		F33DF7FF247774FD00264DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F33DF804247774FD00264DA6 /* LectureHallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LectureHallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33DF808247774FD00264DA6 /* LectureHallUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LectureHallUITests.m; sourceTree = "<group>"; };
+		F33DF80A247774FD00264DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F33DF8172477AF9700264DA6 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		F33DF8182477AF9700264DA6 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		F33DF81B2477BC4100264DA6 /* RTCRemoteUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCRemoteUserManager.h; sourceTree = "<group>"; };
+		F33DF81C2477BC4100264DA6 /* RTCRemoteUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCRemoteUserManager.m; sourceTree = "<group>"; };
+		F33DF81F2477C0C800264DA6 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		F33DF8202477C0C800264DA6 /* MainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		F33DF8222477C35200264DA6 /* RTCRemoteUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCRemoteUserModel.h; sourceTree = "<group>"; };
+		F33DF8232477C35200264DA6 /* RTCRemoteUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCRemoteUserModel.m; sourceTree = "<group>"; };
+		F33DF8252477D18600264DA6 /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		F33DF8262477D4F300264DA6 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		F33DF8272477D4F300264DA6 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		F3F4AE47247E1C860015AB42 /* AlertMsgController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertMsgController.h; sourceTree = "<group>"; };
+		F3F4AE48247E1C860015AB42 /* AlertMsgController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertMsgController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F33DF7DB247774FC00264DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33A6657A4FBF671AF4441A3E /* libPods-LectureHall.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF7F6247774FD00264DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF801247774FD00264DA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41F125CFB94594E1E79EEE7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF9E0DB1610B5C933B40CBEF /* Pods-LectureHall.debug.xcconfig */,
+				6FB24C1A924BCC5F220ED726 /* Pods-LectureHall.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		765BC0AD3CB84A23F6E8BCCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3D14DB62195694CE15B8B58 /* libPods-LectureHall.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F30D20F0247B9EF400BC0A57 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F30D20F1247B9F0C00BC0A57 /* CommonUtils.h */,
+				F30D20F2247B9F0C00BC0A57 /* CommonUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F30D20F4247BC5D100BC0A57 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F30D20F5247BC61500BC0A57 /* RTCRemoterUserCell.h */,
+				F30D20F6247BC61500BC0A57 /* RTCRemoterUserCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F33DF7D5247774FC00264DA6 = {
+			isa = PBXGroup;
+			children = (
+				F33DF7E0247774FC00264DA6 /* LectureHall */,
+				F33DF7FC247774FD00264DA6 /* LectureHallTests */,
+				F33DF807247774FD00264DA6 /* LectureHallUITests */,
+				F33DF7DF247774FC00264DA6 /* Products */,
+				41F125CFB94594E1E79EEE7D /* Pods */,
+				765BC0AD3CB84A23F6E8BCCA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F33DF7DF247774FC00264DA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33DF7DE247774FC00264DA6 /* LectureHall.app */,
+				F33DF7F9247774FD00264DA6 /* LectureHallTests.xctest */,
+				F33DF804247774FD00264DA6 /* LectureHallUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33DF7E0247774FC00264DA6 /* LectureHall */ = {
+			isa = PBXGroup;
+			children = (
+				F30D20F0247B9EF400BC0A57 /* Utils */,
+				F33DF81E2477BC6200264DA6 /* Main */,
+				F33DF81A2477BC2800264DA6 /* Manager */,
+				F33DF8162477AF6500264DA6 /* Login */,
+				F33DF7E1247774FC00264DA6 /* AppDelegate.h */,
+				F33DF7E2247774FC00264DA6 /* AppDelegate.m */,
+				F33DF7EA247774FC00264DA6 /* Main.storyboard */,
+				F33DF7ED247774FD00264DA6 /* Assets.xcassets */,
+				F33DF7EF247774FD00264DA6 /* LaunchScreen.storyboard */,
+				F33DF7F2247774FD00264DA6 /* Info.plist */,
+				F33DF7F3247774FD00264DA6 /* main.m */,
+				F33DF8252477D18600264DA6 /* AppConfig.h */,
+			);
+			path = LectureHall;
+			sourceTree = "<group>";
+		};
+		F33DF7FC247774FD00264DA6 /* LectureHallTests */ = {
+			isa = PBXGroup;
+			children = (
+				F33DF7FD247774FD00264DA6 /* LectureHallTests.m */,
+				F33DF7FF247774FD00264DA6 /* Info.plist */,
+			);
+			path = LectureHallTests;
+			sourceTree = "<group>";
+		};
+		F33DF807247774FD00264DA6 /* LectureHallUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F33DF808247774FD00264DA6 /* LectureHallUITests.m */,
+				F33DF80A247774FD00264DA6 /* Info.plist */,
+			);
+			path = LectureHallUITests;
+			sourceTree = "<group>";
+		};
+		F33DF8162477AF6500264DA6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F33DF8172477AF9700264DA6 /* LoginController.h */,
+				F33DF8182477AF9700264DA6 /* LoginController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F33DF81A2477BC2800264DA6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F33DF8262477D4F300264DA6 /* NetworkManager.h */,
+				F33DF8272477D4F300264DA6 /* NetworkManager.m */,
+				F33DF81B2477BC4100264DA6 /* RTCRemoteUserManager.h */,
+				F33DF81C2477BC4100264DA6 /* RTCRemoteUserManager.m */,
+				F33DF8222477C35200264DA6 /* RTCRemoteUserModel.h */,
+				F33DF8232477C35200264DA6 /* RTCRemoteUserModel.m */,
+				1324374424975D4400F592D4 /* RTCManager.h */,
+				1324374524975D4400F592D4 /* RTCManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F33DF81E2477BC6200264DA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F30D20F4247BC5D100BC0A57 /* Cell */,
+				F33DF81F2477C0C800264DA6 /* MainController.h */,
+				F33DF8202477C0C800264DA6 /* MainController.m */,
+				F3F4AE47247E1C860015AB42 /* AlertMsgController.h */,
+				F3F4AE48247E1C860015AB42 /* AlertMsgController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F33DF7DD247774FC00264DA6 /* LectureHall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F33DF80D247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHall" */;
+			buildPhases = (
+				B53DD623704F16FD343DCEB4 /* [CP] Check Pods Manifest.lock */,
+				F33DF7DA247774FC00264DA6 /* Sources */,
+				F33DF7DB247774FC00264DA6 /* Frameworks */,
+				F33DF7DC247774FC00264DA6 /* Resources */,
+				B2F01A84A9E182F77E7116D1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LectureHall;
+			productName = LectureHall;
+			productReference = F33DF7DE247774FC00264DA6 /* LectureHall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F33DF7F8247774FD00264DA6 /* LectureHallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F33DF810247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHallTests" */;
+			buildPhases = (
+				F33DF7F5247774FD00264DA6 /* Sources */,
+				F33DF7F6247774FD00264DA6 /* Frameworks */,
+				F33DF7F7247774FD00264DA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F33DF7FB247774FD00264DA6 /* PBXTargetDependency */,
+			);
+			name = LectureHallTests;
+			productName = LectureHallTests;
+			productReference = F33DF7F9247774FD00264DA6 /* LectureHallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F33DF803247774FD00264DA6 /* LectureHallUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F33DF813247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHallUITests" */;
+			buildPhases = (
+				F33DF800247774FD00264DA6 /* Sources */,
+				F33DF801247774FD00264DA6 /* Frameworks */,
+				F33DF802247774FD00264DA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F33DF806247774FD00264DA6 /* PBXTargetDependency */,
+			);
+			name = LectureHallUITests;
+			productName = LectureHallUITests;
+			productReference = F33DF804247774FD00264DA6 /* LectureHallUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F33DF7D6247774FC00264DA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = alibaba;
+				TargetAttributes = {
+					F33DF7DD247774FC00264DA6 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					F33DF7F8247774FD00264DA6 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = F33DF7DD247774FC00264DA6;
+					};
+					F33DF803247774FD00264DA6 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = F33DF7DD247774FC00264DA6;
+					};
+				};
+			};
+			buildConfigurationList = F33DF7D9247774FC00264DA6 /* Build configuration list for PBXProject "LectureHall" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F33DF7D5247774FC00264DA6;
+			productRefGroup = F33DF7DF247774FC00264DA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F33DF7DD247774FC00264DA6 /* LectureHall */,
+				F33DF7F8247774FD00264DA6 /* LectureHallTests */,
+				F33DF803247774FD00264DA6 /* LectureHallUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F33DF7DC247774FC00264DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33DF7F1247774FD00264DA6 /* LaunchScreen.storyboard in Resources */,
+				F33DF7EE247774FD00264DA6 /* Assets.xcassets in Resources */,
+				F33DF7EC247774FC00264DA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF7F7247774FD00264DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF802247774FD00264DA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2F01A84A9E182F77E7116D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LectureHall/Pods-LectureHall-frameworks.sh",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunPlayer.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/alivcffmpeg.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AlivcConan.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunMediaDownloader.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/artpSource.framework",
+				"${PODS_ROOT}/AliRTCSdk/AliRTCSdk.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/alivcffmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlivcConan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunMediaDownloader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/artpSource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliRTCSdk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LectureHall/Pods-LectureHall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B53DD623704F16FD343DCEB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LectureHall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F33DF7DA247774FC00264DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30D20F7247BC61500BC0A57 /* RTCRemoterUserCell.m in Sources */,
+				F33DF8242477C35200264DA6 /* RTCRemoteUserModel.m in Sources */,
+				1324374624975D4400F592D4 /* RTCManager.m in Sources */,
+				F3F4AE49247E1C860015AB42 /* AlertMsgController.m in Sources */,
+				F33DF8282477D4F300264DA6 /* NetworkManager.m in Sources */,
+				F30D20F3247B9F0C00BC0A57 /* CommonUtils.m in Sources */,
+				F33DF8192477AF9700264DA6 /* LoginController.m in Sources */,
+				F33DF7E3247774FC00264DA6 /* AppDelegate.m in Sources */,
+				F33DF7F4247774FD00264DA6 /* main.m in Sources */,
+				F33DF8212477C0C800264DA6 /* MainController.m in Sources */,
+				F33DF81D2477BC4100264DA6 /* RTCRemoteUserManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF7F5247774FD00264DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33DF7FE247774FD00264DA6 /* LectureHallTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F33DF800247774FD00264DA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33DF809247774FD00264DA6 /* LectureHallUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F33DF7FB247774FD00264DA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F33DF7DD247774FC00264DA6 /* LectureHall */;
+			targetProxy = F33DF7FA247774FD00264DA6 /* PBXContainerItemProxy */;
+		};
+		F33DF806247774FD00264DA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F33DF7DD247774FC00264DA6 /* LectureHall */;
+			targetProxy = F33DF805247774FD00264DA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F33DF7EA247774FC00264DA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F33DF7EB247774FC00264DA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F33DF7EF247774FD00264DA6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F33DF7F0247774FD00264DA6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F33DF80B247774FD00264DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F33DF80C247774FD00264DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F33DF80E247774FD00264DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF9E0DB1610B5C933B40CBEF /* Pods-LectureHall.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJUJZGPE73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LectureHall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHall;
+				PRODUCT_NAME = LectureHall;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F33DF80F247774FD00264DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB24C1A924BCC5F220ED726 /* Pods-LectureHall.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJUJZGPE73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = LectureHall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHall;
+				PRODUCT_NAME = LectureHall;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F33DF811247774FD00264DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LectureHallTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LectureHall.app/LectureHall";
+			};
+			name = Debug;
+		};
+		F33DF812247774FD00264DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LectureHallTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LectureHall.app/LectureHall";
+			};
+			name = Release;
+		};
+		F33DF814247774FD00264DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LectureHallUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LectureHall;
+			};
+			name = Debug;
+		};
+		F33DF815247774FD00264DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LectureHallUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliyun.LectureHallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LectureHall;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F33DF7D9247774FC00264DA6 /* Build configuration list for PBXProject "LectureHall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F33DF80B247774FD00264DA6 /* Debug */,
+				F33DF80C247774FD00264DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F33DF80D247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F33DF80E247774FD00264DA6 /* Debug */,
+				F33DF80F247774FD00264DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F33DF810247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F33DF811247774FD00264DA6 /* Debug */,
+				F33DF812247774FD00264DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F33DF813247774FD00264DA6 /* Build configuration list for PBXNativeTarget "LectureHallUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F33DF814247774FD00264DA6 /* Debug */,
+				F33DF815247774FD00264DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F33DF7D6247774FC00264DA6 /* Project object */;
+}
