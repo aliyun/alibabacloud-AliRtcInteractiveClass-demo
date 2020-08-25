@@ -87,6 +87,7 @@ public class RtcOpenAPI {
 
         request.setLayoutIdss(layoutIdArr);
         request.setMediaEncode(30);
+        request.setTaskProfile("9IN_1080P");
         request.setStreamURL(pushUrl);
         request.setTaskId(taskId);
 
