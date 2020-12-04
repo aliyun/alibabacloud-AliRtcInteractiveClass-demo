@@ -262,7 +262,8 @@ export default {
         border: 0;
       }
       .disable {
-        background-color: grey;
+        background-color: #013EBE;
+        opacity: 0.3;
       }
     }
   }

@@ -1,51 +1,8 @@
 import { Message } from 'element-ui';
 import RTCClient from "../rtc-client";
 import http from '../http/http';
+import state from '../../vuex/state';
 export default class Util {
-    /**
-     * 获取推流状态
-     * @param {*} v 
-     * @return {boolean} 
-     */
-    static getPublishState(v) {
-        let arr = v.streamConfigs.filter(re => { return re.state == "active" });
-        return arr.length > 0 ? true : false;
-    }
-    /**
-     * 获取订阅信息
-     * @param {*} instance
-     * @param {string} userId
-     * @return {Object} 
-     */
-    static getSubscribeInfo(instance, userId) {
-        var userInfo = instance.getUserInfo(userId);
-        var subscribeInfo = [], subscribeInfoArr = [], isSubAudio = false, isSubLarge = false, isSubSmall = false, isSubCamera = false, isSubScreen = false, isSubVideo = false;
-        if (userInfo) {
-            userInfo.streamConfigs.forEach(v => {
-                if (v.subscribed) {
-                    subscribeInfo.push(v.label);
-                    subscribeInfoArr.push(v);
-                    v.type == "audio" ? isSubAudio = true : "";
-                    v.type == "video" ? isSubVideo = true : '';
-                    v.label == "sophon_video_camera_large" ? isSubLarge = true : "";
-                    v.label == "sophon_video_camera_small" ? isSubSmall = true : "";
-                    v.label == "sophon_video_screen_share" ? isSubScreen = true : "";
-                    if (isSubLarge || isSubSmall) {
-                        isSubCamera = true;
-                    }
-                }
-            });
-        }
-        return { subscribeInfo: subscribeInfo, subscribeInfoArr: subscribeInfoArr, isSubLarge: isSubLarge, isSubSmall: isSubSmall, isSubCamera: isSubCamera, isSubAudio: isSubAudio, isSubScreen: isSubScreen, isSubVideo: isSubVideo };
-    }
-    /**
-     * 移除dom
-     * @param {*} id 
-     */
-    static removeDomById(id) {
-        let videoWrapper = document.getElementById(id);
-        videoWrapper ? videoWrapper.remove() : console.error("demo is null");
-    }
     /**
      * 显示信息
      * @param {*} v 
@@ -141,9 +98,6 @@ export default class Util {
             .startPreview(document.getElementById("localVideo"))
             .then(() => {
                 AppConfig.localStream=document.getElementById("localVideo").srcObject;
-                document.getElementById(
-                    RTCClient.instance.userId
-                ).srcObject = AppConfig.localStream;
                 hvuex({ isPreview: true });
             })
             .catch(err => {
@@ -161,102 +115,11 @@ export default class Util {
             video = document.getElementById("localVideo");
         }
         RTCClient.instance.setDisplayRemoteVideo(data.userId, video, data.code);
-        if (subUserId && subUserId == data.userId) {
-            setTimeout(() => {
-                document.getElementById(data.userId).srcObject = document.getElementById("localVideo").srcObject;
-            }, 100);
-        }
-    }
-    /**
-     * 检查是否mute
-     * @param {*} data 
-     */
-    static checkIsMute(data) {
-        let info = RTCClient.instance.getUserInfo(data.userId);
-        console.log(info);
-        let streamConfigs = info.streamConfigs;
-        let obj = streamConfigs.getObjByproprety(
-            "sophon_video_camera_small",
-            "label"
-        );
-        if (!obj.subscribed) {
-            obj = streamConfigs.getObjByproprety(
-                "sophon_video_camera_large",
-                "label"
-            );
-        }
-        let objScree = streamConfigs.getObjByproprety(
-            "sophon_video_screen_share",
-            "label"
-        );
-        console.error(obj, objScree);
-        if (obj.subscribed && !objScree.subscribed) {
-            if (obj.muted) {
-                let video = document.getElementById(data.userId);
-                let subUserId = document
-                    .getElementById("localVideo")
-                    .getAttribute("subUserId");
-                video.srcObject = null;
-                if (subUserId && subUserId == data.userId) {
-                    video = document.getElementById("localVideo");
-                }
-                video.srcObject = null;
-            }
-        }
-    }
-    /**
-     * 更新图片状态
-     * @param {*} data 
-     */
-    static updateImgState(data) {
-        data.forEach(element => {
-            let streamConfigs = element.streamConfigs;
-            if (Array.isArray(streamConfigs)) {
-                let obj = streamConfigs.getObjByproprety(
-                    "sophon_video_camera_small",
-                    "label"
-                );
-                if (!obj.subscribed) {
-                    obj = streamConfigs.getObjByproprety(
-                        "sophon_video_camera_large",
-                        "label"
-                    );
-                }
-                let objScree = streamConfigs.getObjByproprety(
-                    "sophon_video_screen_share",
-                    "label"
-                );
-                console.log("obj", obj, objScree);
-                if (obj.subscribed && !objScree.subscribed) {
-                    let video = document.getElementById(element.userId);
-                    let subUserId = document
-                        .getElementById("localVideo")
-                        .getAttribute("subUserId");
-                    if (obj.muted) {
-                        video.srcObject = null;
-                        if (subUserId && subUserId == element.userId) {
-                            video = document.getElementById("localVideo");
-                        }
-                        video.srcObject = null;
-                    } else {
-                        RTCClient.instance.setDisplayRemoteVideo(
-                            element.userId,
-                            document.getElementById(element.userId),
-                            1
-                        );
-                        if (subUserId && subUserId == element.userId) {
-                            setTimeout(() => {
-                                document.getElementById(
-                                    "localVideo"
-                                ).srcObject = document.getElementById(
-                                    element.userId
-                                ).srcObject;
-                            }, 100);
-                        }
-                    }
-                }
-            }
-        });
+        // if (subUserId && subUserId == data.userId) {
+        //     setTimeout(() => {
+        //         document.getElementById(data.userId).srcObject = document.getElementById("localVideo").srcObject;
+        //     }, 100);
+        // }
     }
     /**
      * 
@@ -320,6 +183,22 @@ export default class Util {
                 resmsg += "屏幕共享已取消";
                 hvuex({ isPublishScreen: false });
                 http.updateMPUTask(RTCClient.instance.channel, RTCClient.instance.userId, "camera");
+                if(state.data.isSwitchScreen){
+                    if(state.data.isPublishScreen){
+                        document.getElementById(RTCClient.instance.userId).srcObject = RTCClient.instance.screenStream;
+                    }else{
+                        document.getElementById(RTCClient.instance.userId).srcObject = AppConfig.localStream;
+                    }
+                }else{
+                    if(state.data.isPublishScreen){
+                        document.getElementById("localVideo").srcObject = RTCClient.instance.screenStream;
+                    }else{
+                        document.getElementById("localVideo").srcObject = AppConfig.localStream;
+                    }
+                }
+                if(document.getElementById(RTCClient.instance.userId).srcObject == AppConfig.localStream){
+                   document.getElementById(RTCClient.instance.userId).srcObject = null;
+                }
                 break;
             case 10201:
                 resmsg += "自动播放失败";

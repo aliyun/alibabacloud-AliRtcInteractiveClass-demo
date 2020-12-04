@@ -4,7 +4,7 @@
       <span class="vsersion">{{$store.state.data.version}}</span>
       <div
         class="mic"
-        :class="{'on':isMuteLocalMic}"
+        :class="[{'on':isMuteLocalMic},{'visiable':!$store.state.data.isInRTC}]"
         @click="muteLocalMic"
         :disable="$store.state.data.isInRTC"
       >
@@ -15,7 +15,7 @@
       </div>
       <div
         class="camera"
-        :class="{'on':isMuteLocalCamera}"
+        :class="[{'on':isMuteLocalCamera},{'visiable':!$store.state.data.isInRTC}]"
         @click="muteLocalCamera"
         :disable="$store.state.data.isInRTC"
       >
@@ -33,6 +33,10 @@
         <i :style="$store.state.data.isPublish ? 'background-image:url('+ stop +')' : 'background-image:url('+  start +')'"></i>
         <span>{{isTeacherInitState ? '开始课程' : $store.state.data.isPublish?'暂停课程':'恢复课程'}}</span>
       </div>-->
+      <div class="screen" @click="publishScreen" v-if="$store.state.data.supportInfo.browser!='Safari'&&$store.state.data.isInRTC">
+        <i :style="'background-image:url(' + screenshare + ')'"></i>
+        <span>{{$store.state.data.isPublishScreen?'取消屏幕共享':'屏幕共享'}}</span>
+      </div>
       <div
         class="switchRole"
         :class="{'on':$store.state.data.isInRTC}"
@@ -44,11 +48,7 @@
         ></i>
         <span>{{$store.state.data.isInRTC?'取消连麦':'连麦'}}</span>
       </div>
-      <div class="screen" @click="publishScreen" v-if="$store.state.data.supportInfo.browser!='Safari'">
-        <i :style="'background-image:url(' + screenshare + ')'"></i>
-        <span>{{$store.state.data.isPublishScreen?'取消屏幕共享':'屏幕共享'}}</span>
-      </div>
-      <div class="share" v-if="$store.state.data.role==1" @click="shareUrlCopy">
+      <div class="share" @click="shareUrlCopy">
         <i :style="'background-image:url('+ share +')'"></i>
         <span>分享</span>
       </div>
@@ -58,13 +58,6 @@
         ></i>
         <span>{{isTeacherInitState&&$store.state.data.role==0?'结束课程':'离开教室'}}</span>
       </div>
-
-      <!-- <div class="footer-setting" @click="showSetting">
-        <p>
-          <i class="iconfont icon-shezhi"></i>
-        </p>
-        <span>设置</span>
-      </div>-->
       <input
         id="share"
         type="text"
@@ -126,10 +119,10 @@ export default {
         .then(re => {
           this.isMuteLocalCamera = RTCClient.instance.isMuteLocalCamera;
           hvuex({ isPreview: RTCClient.instance.isPreview });
-          AppConfig.localStream=document.getElementById("localVideo").srcObject;
-          document.getElementById(
-            RTCClient.instance.userId
-          ).srcObject = AppConfig.localStream;
+          if(RTCClient.instance.isPreview){
+              AppConfig.localStream=document.getElementById("localVideo").srcObject;
+              document.getElementById(RTCClient.instance.userId).srcObject = document.getElementById("localVideo").srcObject;
+          }
         })
         .catch(err => {});
     },
@@ -150,6 +143,11 @@ export default {
               RTCClient.instance.userId,
               "camera"
             );
+            RTCClient.instance.stopScreenSharePreview(document.getElementById("localVideo"));
+            document.getElementById("localVideo").srcObject = AppConfig.localStream;
+            if(document.getElementById(RTCClient.instance.userId).srcObject == AppConfig.localStream){
+              document.getElementById(RTCClient.instance.userId).srcObject = null;
+            }
             hvuex({ isPublishScreen: false });
           })
           .catch(err => {
@@ -164,9 +162,14 @@ export default {
               "shareScreen"
             );
             hvuex({ isPublishScreen: true });
+            if(this.$store.state.data.isSwitchScreen){
+              RTCClient.instance.startScreenSharePreview(document.getElementById(RTCClient.instance.userId));
+            }else{
+              RTCClient.instance.startScreenSharePreview(document.getElementById("localVideo"));
+              document.getElementById(RTCClient.instance.userId).srcObject = AppConfig.localStream;
+            }
           })
           .catch(err => {
-            Util.toast(err.message);
           });
       }
     },
@@ -223,6 +226,9 @@ export default {
       RTCClient.instance.registerCallBack((eventName, data) => {
         switch (eventName) {
           case "onJoin":
+          case "onPublisher":
+          case "onUnPublisher":
+          case "onNotify":
             hvuex({ userList: RTCClient.instance.getUserList() });
             break;
           case "onSubscribeResult":
@@ -233,9 +239,6 @@ export default {
             break;
           case "onBye":
             Util.onByeMessage(data);
-            break;
-          case "onNotify":
-            Util.updateImgState(data);
             break;
           case "onLeave":
             hvuex({ userList: RTCClient.instance.getUserList() });
@@ -287,6 +290,9 @@ export default {
   background-color: #f8f8f8;
   box-sizing: border-box;
   padding: vh(17) vw(32);
+  .visiable{
+    visibility: hidden;
+  }
   #share {
     position: fixed;
     bottom: vh(-1111);
@@ -362,7 +368,7 @@ export default {
     }
   }
   .teacher {
-    margin-left: vw(238);
+    margin-left: vw(178);
   }
 }
 </style>

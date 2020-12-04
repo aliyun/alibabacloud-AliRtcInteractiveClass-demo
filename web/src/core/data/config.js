@@ -1,3 +1,3 @@
 export default{
-    baseUrl:"https://xxxxxx/interactive-live-class",
+    baseUrl:"https://xxxxx/interactive-live-class",
 }

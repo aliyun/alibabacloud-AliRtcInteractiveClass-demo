@@ -9,7 +9,6 @@ function hsetStore(n, v) {
         window.sessionStorage.setItem(n, v);
 }
 function hgetStore(n) {
-        return null;
         return window.sessionStorage.getItem(n);
 }
 

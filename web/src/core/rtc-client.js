@@ -15,11 +15,13 @@ export default class RTCClient {
         this._autoPublish = true;// 自动推流
         this._autoSubscribe = true;// 自动订阅
         this._isPreview = false;// 是否开启了预览
+        this._isScreenSharePreview = false; //是否开启了屏幕分享预览
         this._isMuteLocalMic = false; //
         this._isMuteLocalCamera = false; //
         this._currentRole = 0; // 默认当前角色是主播
         this._clinet.enableHighDefinitionPreview(false);
         this._remoteStreamList = [];
+        this._screenStream= null;
         /**
          * 默认参数
          */
@@ -82,6 +84,12 @@ export default class RTCClient {
         return this._isPreview;
     }
     /**
+     * 获取屏幕分享状态
+     */
+    get isScreenSharePreview (){
+        return this._isScreenSharePreview;
+    }
+    /**
      * 获取是否mute  视频
      */
     get isMuteLocalCamera() {
@@ -98,6 +106,13 @@ export default class RTCClient {
      */
     get currentRole() {
         return this._currentRole;
+    }
+
+    /**
+     * 获取屏幕分享流
+     */
+    get screenStream(){
+        return this._screenStream;
     }
     /**
      * 设置是否允许发布音频流（默认为允许发布音频流）
@@ -229,6 +244,24 @@ export default class RTCClient {
         })
     }
     /**
+     * 开启屏幕分享预览
+     * @param {*} video 
+     */
+    startScreenSharePreview(video) {
+        return new Promise((resolve, reject) => {
+            this._clinet.startScreenSharePreview(video).then(() => {
+                this._isScreenSharePreview = true;
+                setTimeout(()=>{
+                    this._screenStream = video.srcObject;
+                },100)
+                resolve();
+            }).catch(err => {
+                reject(err);
+                console.error(err,video);
+            })
+        })
+    }
+    /**
     * 停止预览
     */
     stopPreview() {
@@ -240,6 +273,24 @@ export default class RTCClient {
                 reject(err);
                 console.error(err);
             })
+        })
+    }
+    /**
+     * 停止屏幕分享预览
+     */
+    stopScreenSharePreview() {
+        return new Promise((resolve, reject) => {
+            if(this._isScreenSharePreview){
+                this._clinet.stopScreenSharePreview().then(() => {
+                    this._isScreenSharePreview = false;
+                    resolve();
+                }).catch(err => {
+                    reject(err);
+                    console.error(err);
+                })
+            }else{
+                resolve();
+            }
         })
     }
     /**
@@ -297,6 +348,9 @@ export default class RTCClient {
     stopPublishScreen() {
         return new Promise((resolve, reject) => {
             this._clinet.configLocalScreenPublish = false;
+            // if(this._isScreenSharePreview){
+            //     this.stopScreenSharePreview();
+            // }
             this._publish().then(re => {
                 resolve(re);
             }).catch(err => {
@@ -359,7 +413,7 @@ export default class RTCClient {
                 })
             } else {
                 this.configRemoteScreenTrack(userId, false);
-                this.configRemoteCameraTrack(userId, true, true);// 优先订阅小流
+                this.configRemoteCameraTrack(userId, false, true);// 优先订阅小流
                 this._subscribe(userId).then(re => {
                     resolve(1);
                 }).catch(err => {
@@ -522,8 +576,11 @@ export default class RTCClient {
      */
     leaveChannel() {
         return new Promise((resolve, reject) => {
+            if (this._isScreenSharePreview) {
+                this.stopScreenSharePreview();
+            }
             if (this._isPreview) {
-                this.configLocalScreenPublish=false;
+                this.configLocalScreenPublish = false;
                 this.stopPreview();
                 this._clinet.leaveChannel().then(re => {
                     this._isInCall = false;
@@ -768,6 +825,15 @@ export default class RTCClient {
         this._clinet.on("onError", (error) => {
             console.error('onError', error);
             if (this._callBack) {
+                try {
+                    switch (error.errorCode){
+                        case 10012:
+                            this._isScreenSharePreview = false;
+                            break;
+                    }
+                } catch (error) {
+                    
+                }
                 this._callBack("onError", error);
             }
         })
@@ -778,6 +844,7 @@ export default class RTCClient {
             console.warn("onBye", data);
             this._isInCall = false;
             this._isPublish = false;
+            this.stopScreenSharePreview();
             if (this._callBack) {
                 this._callBack("onBye", data.code);
             }

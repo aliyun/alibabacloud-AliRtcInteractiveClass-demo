@@ -1,7 +1,7 @@
 export default {
   //所有
   data: {
-    version:"2.0.12",
+    version:"",
     classNum: "",// 教室号
     userName: '',// 用户名
     userId:null,// userId
